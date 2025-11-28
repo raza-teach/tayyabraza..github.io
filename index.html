@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hussain Mehdi | SEO Expert - On-Page & Off-Page Specialist</title>
+    <meta name="description" content="Professional SEO Expert offering On-Page, Off-Page SEO and Speed Optimization services. Boost your website rankings and traffic.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e293b;
+            --accent: #f59e0b;
+            --text: #334155;
+            --light: #f8fafc;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 2rem;
+            background: var(--light);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Hussain Mehdi</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get Free Audit</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SEO Expert & Speed Optimization Specialist</h1>
+            <p>Boost your website rankings, increase traffic, and improve user experience with professional SEO services</p>
+            <a href="#contact" class="cta-button" style="background: var(--accent);">Hire Me Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>My SEO Services</h2>
+            <p>Comprehensive SEO solutions for your business growth</p>
+        </div>
+        <div class="services-grid">
+            <!-- On-Page SEO -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>On-Page SEO</h3>
+                <p>Optimize your website content and structure for better search engine visibility</p>
+                <ul class="service-features">
+                    <li>Keyword Research & Strategy</li>
+                    <li>Content Optimization</li>
+                    <li>Meta Tags Optimization</li>
+                    <li>Header Tag Optimization</li>
+                    <li>Internal Linking Structure</li>
+                    <li>Image Optimization</li>
+                    <li>Schema Markup Implementation</li>
+                </ul>
+            </div>
+
+            <!-- Off-Page SEO -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Off-Page SEO</h3>
+                <p>Build authority and credibility through strategic link building and brand mentions</p>
+                <ul class="service-features">
+                    <li>Link Building Campaigns</li>
+                    <li>Guest Posting</li>
+                    <li>Social Media Signals</li>
+                    <li>Brand Mention Monitoring</li>
+                    <li>Local SEO Citations</li>
+                    <li>Influencer Outreach</li>
+                    <li>Directory Submissions</li>
+                </ul>
+            </div>
+
+            <!-- Speed Optimization -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Speed Optimization</h3>
+                <p>Improve website loading speed for better user experience and rankings</p>
+                <ul class="service-features">
+                    <li>Page Speed Analysis</li>
+                    <li>Image Optimization</li>
+                    <li>Code Minification</li>
+                    <li>Caching Implementation</li>
+                    <li>CDN Setup</li>
+                    <li>Server Response Optimization</li>
+                    <li>Core Web Vitals Fixing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Professional SEO Expert with proven results</p>
+        </div>
+        <div class="about-content">
+            <div>
+                <h3>Hussain Mehdi</h3>
+                <p>I am a passionate SEO specialist with expertise in both On-Page and Off-Page SEO techniques. My focus is on delivering measurable results that help businesses grow their online presence and increase revenue.</p>
+                <p>With years of experience in speed optimization, I ensure your website not only ranks well but also provides an exceptional user experience.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>On-Page SEO</h4>
+                    <p>Expert</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Off-Page SEO</h4>
+                    <p>Expert</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Speed Optimization</h4>
+                    <p>Advanced</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Technical SEO</h4>
+                    <p>Advanced</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Ready to boost your rankings? Let's talk!</p>
+        </div>
+        <div class="contact-grid">
+            <div>
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-envelope"></i> hussainmehdi1222@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +92 XXX XXXXXXX</p>
+                <p><i class="fas fa-map-marker-alt"></i> Pakistan</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hussain Mehdi. All rights reserved.</p>
+        <p>SEO Expert & Speed Optimization Specialist</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
