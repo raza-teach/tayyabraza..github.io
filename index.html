@@ -3,54 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hussain Mehdi | SEO Expert - On-Page & Off-Page Specialist</title>
-    <meta name="description" content="Professional SEO Expert offering On-Page, Off-Page SEO and Speed Optimization services. Boost your website rankings and traffic.">
+    <title>Tayyab Raza | SEO Expert - 4+ Years Experience | On-Page & Off-Page Specialist</title>
+    <meta name="description" content="Professional SEO Expert with 4+ years experience in On-Page SEO, Off-Page SEO, Speed Optimization, Content Writing & Blogging">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
-            --primary: #2563eb;
-            --secondary: #1e293b;
-            --accent: #f59e0b;
-            --text: #334155;
-            --light: #f8fafc;
+            --primary: #0062ff;
+            --secondary: #1a1a1a;
+            --accent: #00d4ff;
+            --gold: #ffd700;
+            --text: #333;
+            --light: #f8f9fa;
         }
 
         body {
-            background-color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: var(--text);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Header */
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle-1 { width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s; }
+        .circle-2 { width: 200px; height: 200px; top: 60%; right: 10%; animation-delay: 2s; }
+        .circle-3 { width: 150px; height: 150px; bottom: 20%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Glass Morphism Header */
         header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             position: fixed;
             width: 100%;
             z-index: 1000;
+            padding: 1rem 0;
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--secondary);
         }
 
         .nav-links {
@@ -60,46 +105,71 @@
         }
 
         .nav-links a {
+            color: white;
             text-decoration: none;
-            color: var(--text);
             font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .cta-button {
-            background: var(--primary);
-            color: white;
+            background: linear-gradient(45deg, var(--gold), #ffed4e);
+            color: var(--secondary);
             padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
-            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
         }
 
         /* Hero Section */
         .hero {
-            padding: 120px 2rem 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: white;
+            padding: 0 2rem;
+            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
-            margin: 0 auto;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255,215,0,0.3);
         }
 
         .hero p {
@@ -108,19 +178,29 @@
             opacity: 0.9;
         }
 
+        .experience-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
         /* Services Section */
         .services {
-            padding: 80px 2rem;
-            background: white;
+            padding: 100px 2rem;
+            background: rgba(255,255,255,0.95);
+            position: relative;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--secondary);
             margin-bottom: 1rem;
         }
@@ -134,22 +214,40 @@
         }
 
         .service-card {
-            background: var(--light);
+            background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
         .service-icon {
             width: 80px;
             height: 80px;
-            background: var(--primary);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -162,6 +260,7 @@
         .service-card h3 {
             color: var(--secondary);
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
         .service-features {
@@ -172,20 +271,64 @@
 
         .service-features li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
-        .service-features li:before {
-            content: "✓";
-            color: var(--accent);
-            font-weight: bold;
-            margin-right: 0.5rem;
+        .service-features li::before {
+            content: '▸';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 2rem;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
         }
 
         /* About Section */
         .about {
-            padding: 80px 2rem;
-            background: var(--light);
+            padding: 100px 2rem;
+            background: white;
         }
 
         .about-content {
@@ -197,23 +340,53 @@
             align-items: center;
         }
 
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
+            margin-top: 2rem;
         }
 
         .skill-item {
-            background: white;
+            background: var(--light);
             padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         /* Contact Section */
         .contact {
-            padding: 80px 2rem;
-            background: white;
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
         }
 
         .contact-grid {
@@ -224,24 +397,54 @@
             gap: 4rem;
         }
 
-        .contact-form {
+        .contact-info {
             display: flex;
             flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
             gap: 1rem;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            color: white;
             font-size: 1rem;
         }
 
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.7);
         }
 
         /* Footer */
@@ -260,13 +463,22 @@
         }
 
         .social-links a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            text-decoration: none;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
-            color: var(--accent);
+            background: var(--gold);
+            color: var(--secondary);
+            transform: translateY(-5px);
         }
 
         /* Responsive */
@@ -291,25 +503,41 @@
     </style>
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Hussain Mehdi</a>
+            <a href="#" class="logo">
+                <div class="logo-icon">TR</div>
+                Tayyab Raza
+            </a>
             <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Get Free Audit</a>
+            <a href="#contact" class="cta-button">Hire Me</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1>SEO Expert & Speed Optimization Specialist</h1>
-            <p>Boost your website rankings, increase traffic, and improve user experience with professional SEO services</p>
-            <a href="#contact" class="cta-button" style="background: var(--accent);">Hire Me Now</a>
+            <div class="experience-badge">
+                <i class="fas fa-star"></i> 4+ Years SEO Experience
+            </div>
+            <h1>Tayyab Raza</h1>
+            <p>Professional SEO Expert & Digital Marketing Specialist</p>
+            <p>Boost your website rankings with proven SEO strategies and increase organic traffic</p>
+            <a href="#contact" class="cta-button">Get Free SEO Audit</a>
         </div>
     </section>
 
@@ -317,61 +545,158 @@
     <section class="services" id="services">
         <div class="section-title">
             <h2>My SEO Services</h2>
-            <p>Comprehensive SEO solutions for your business growth</p>
+            <p>Comprehensive digital marketing solutions for your business growth</p>
         </div>
         <div class="services-grid">
             <!-- On-Page SEO -->
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search-plus"></i>
                 </div>
                 <h3>On-Page SEO</h3>
-                <p>Optimize your website content and structure for better search engine visibility</p>
+                <p>Optimize your website structure and content for maximum search engine visibility</p>
                 <ul class="service-features">
-                    <li>Keyword Research & Strategy</li>
+                    <li>Advanced Keyword Research</li>
                     <li>Content Optimization</li>
-                    <li>Meta Tags Optimization</li>
+                    <li>Meta Tags & Descriptions</li>
                     <li>Header Tag Optimization</li>
-                    <li>Internal Linking Structure</li>
+                    <li>Internal Linking Strategy</li>
                     <li>Image Optimization</li>
                     <li>Schema Markup Implementation</li>
+                    <li>XML Sitemap Creation</li>
                 </ul>
             </div>
 
             <!-- Off-Page SEO -->
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-globe"></i>
+                    <i class="fas fa-globe-americas"></i>
                 </div>
                 <h3>Off-Page SEO</h3>
-                <p>Build authority and credibility through strategic link building and brand mentions</p>
+                <p>Build authority and credibility through strategic link building and digital presence</p>
                 <ul class="service-features">
-                    <li>Link Building Campaigns</li>
-                    <li>Guest Posting</li>
-                    <li>Social Media Signals</li>
+                    <li>High-Quality Link Building</li>
+                    <li>Guest Posting Outreach</li>
+                    <li>Social Media Marketing</li>
                     <li>Brand Mention Monitoring</li>
                     <li>Local SEO Citations</li>
-                    <li>Influencer Outreach</li>
+                    <li>Influencer Collaboration</li>
                     <li>Directory Submissions</li>
+                    <li>Forum Participation</li>
                 </ul>
             </div>
 
             <!-- Speed Optimization -->
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-bolt"></i>
+                    <i class="fas fa-tachometer-alt"></i>
                 </div>
                 <h3>Speed Optimization</h3>
-                <p>Improve website loading speed for better user experience and rankings</p>
+                <p>Improve website loading speed for better user experience and search rankings</p>
                 <ul class="service-features">
                     <li>Page Speed Analysis</li>
-                    <li>Image Optimization</li>
+                    <li>Image Compression</li>
                     <li>Code Minification</li>
                     <li>Caching Implementation</li>
                     <li>CDN Setup</li>
-                    <li>Server Response Optimization</li>
-                    <li>Core Web Vitals Fixing</li>
+                    <li>Server Optimization</li>
+                    <li>Core Web Vitals</li>
+                    <li>Performance Monitoring</li>
                 </ul>
+            </div>
+
+            <!-- Content Writing -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h3>Content Writing</h3>
+                <p>Engaging and SEO-optimized content that ranks and converts</p>
+                <ul class="service-features">
+                    <li>SEO Blog Writing</li>
+                    <li>Article Creation</li>
+                    <li>Website Content</li>
+                    <li>Product Descriptions</li>
+                    <li>Copywriting</li>
+                    <li>Content Strategy</li>
+                    <li>Proofreading</li>
+                    <li>Content Planning</li>
+                </ul>
+            </div>
+
+            <!-- Blogging -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-blog"></i>
+                </div>
+                <h3>Professional Blogging</h3>
+                <p>Complete blog management and content creation services</p>
+                <ul class="service-features">
+                    <li>Blog Setup & Design</li>
+                    <li>Content Calendar</li>
+                    <li>Regular Posting</li>
+                    <li>Keyword Optimization</li>
+                    <li>Audience Engagement</li>
+                    <li>Blog Promotion</li>
+                    <li>Analytics Tracking</li>
+                    <li>Monetization Strategy</li>
+                </ul>
+            </div>
+
+            <!-- Technical SEO -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Technical SEO</h3>
+                <p>Comprehensive technical optimization for search engines</p>
+                <ul class="service-features">
+                    <li>Website Audit</li>
+                    <li>Crawl Error Fixing</li>
+                    <li>Indexation Control</li>
+                    <li>Mobile Optimization</li>
+                    <li>Security Implementation</li>
+                    <li>Structured Data</li>
+                    <li>Website Migration</li>
+                    <li>SEO Monitoring</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-title">
+            <h2>My Portfolio</h2>
+            <p>Successful projects and case studies</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>E-commerce SEO</h3>
+                    <p>Increased organic traffic by 300% for online store</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Blog Management</h3>
+                    <p>Grew blog audience from 0 to 50k monthly visitors</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Local Business SEO</h3>
+                    <p>Top 3 rankings for competitive local keywords</p>
+                </div>
             </div>
         </div>
     </section>
@@ -380,30 +705,36 @@
     <section class="about" id="about">
         <div class="section-title">
             <h2>About Me</h2>
-            <p>Professional SEO Expert with proven results</p>
+            <p>4+ Years of Digital Marketing Excellence</p>
         </div>
         <div class="about-content">
-            <div>
-                <h3>Hussain Mehdi</h3>
-                <p>I am a passionate SEO specialist with expertise in both On-Page and Off-Page SEO techniques. My focus is on delivering measurable results that help businesses grow their online presence and increase revenue.</p>
-                <p>With years of experience in speed optimization, I ensure your website not only ranks well but also provides an exceptional user experience.</p>
+            <div class="about-image">
+                <div class="profile-img" style="background: linear-gradient(45deg, #667eea, #764ba2); height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    <i class="fas fa-user-tie"></i>
+                </div>
             </div>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h4>On-Page SEO</h4>
-                    <p>Expert</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Off-Page SEO</h4>
-                    <p>Expert</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Speed Optimization</h4>
-                    <p>Advanced</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Technical SEO</h4>
-                    <p>Advanced</p>
+            <div>
+                <h3>Tayyab Raza - SEO Specialist</h3>
+                <p>With over 4 years of hands-on experience in search engine optimization, I have helped numerous businesses achieve their digital marketing goals through proven SEO strategies.</p>
+                <p>My expertise spans across On-Page SEO, Off-Page SEO, Technical SEO, Speed Optimization, Content Writing, and Blog Management.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>On-Page SEO</h4>
+                        <p>Expert Level</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Off-Page SEO</h4>
+                        <p>Expert Level</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Content Writing</h4>
+                        <p>Advanced</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Speed Optimization</h4>
+                        <p>Advanced</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -413,22 +744,49 @@
     <section class="contact" id="contact">
         <div class="section-title">
             <h2>Get In Touch</h2>
-            <p>Ready to boost your rankings? Let's talk!</p>
+            <p>Ready to boost your online presence? Let's discuss your project!</p>
         </div>
         <div class="contact-grid">
-            <div>
-                <h3>Contact Information</h3>
-                <p><i class="fas fa-envelope"></i> hussainmehdi1222@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +92 XXX XXXXXXX</p>
-                <p><i class="fas fa-map-marker-alt"></i> Pakistan</p>
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>t.raza121212@gmail.com</p>
+                    </div>
+                </div>
                 
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>0311 7270314</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Multan, Punjab, Pakistan</p>
+                    </div>
+                </div>
+
                 <div class="social-links">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
+            
             <form class="contact-form">
                 <div class="form-group">
                     <input type="text" placeholder="Your Name" required>
@@ -440,7 +798,7 @@
                     <input type="text" placeholder="Subject" required>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Your Message" required></textarea>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
@@ -449,8 +807,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Hussain Mehdi. All rights reserved.</p>
-        <p>SEO Expert & Speed Optimization Specialist</p>
+        <p>&copy; 2024 Tayyab Raza. All rights reserved.</p>
+        <p>SEO Expert & Digital Marketing Specialist</p>
     </footer>
 
     <script>
@@ -467,8 +825,31 @@
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
+            alert('Thank you for your message! I will contact you within 24 hours.');
             this.reset();
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
         });
     </script>
 </body>
